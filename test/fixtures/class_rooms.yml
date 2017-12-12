@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  person_price: 
+  style_name: MyString
+  expect_count: 
+  can_add_bed: false
+  discount_rate: 1.5
+  surcharge_rate: 1.5
+
+two:
+  person_price: 
+  style_name: MyString
+  expect_count: 
+  can_add_bed: false
+  discount_rate: 1.5
+  surcharge_rate: 1.5

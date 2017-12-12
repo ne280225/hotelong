@@ -1,4 +1,46 @@
 Rails.application.routes.draw do
+  get 'plans/index'
+
+  get 'plans/show'
+
+  get 'rooms/index'
+
+  get 'rooms/show'
+
+  get 'reservations/index'
+
+  get 'reservations/show'
+
+  get 'reservations/new'
+
+  get 'reservations/confirm'
+
+  get 'reservations/create'
+
+  get 'reservations/edit'
+
+  get 'reservations/update'
+
+  get 'reservations/destroy'
+
+  get 'members/show'
+
+  get 'members/new'
+
+  get 'members/confirm'
+
+  get 'members/create'
+
+  get 'members/edit'
+
+  get 'members/update'
+
+  get 'members/destroy'
+
+  get 'mypage/index'
+
+  get 'top/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
