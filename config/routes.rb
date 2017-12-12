@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root 'top#index'
+  
   get 'plans/index'
 
   get 'plans/show'
@@ -29,7 +32,7 @@ Rails.application.routes.draw do
 
   get 'members/confirm'
 
-  get 'members/create'
+  post 'members/create'
 
   get 'members/edit'
 
