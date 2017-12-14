@@ -13,7 +13,7 @@ class MembersController < ApplicationController
     @member = Member.new(member_params)
  #   if @member.save
     @member.save
-    redirect_to top_index_path
+    redirect_to controller: 'top', action: 'index'
 #  else
 #    render 'new'
 # end

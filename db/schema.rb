@@ -25,12 +25,13 @@ ActiveRecord::Schema.define(version: 20171212040007) do
   end
 
   create_table "members", force: :cascade do |t|
-    t.string   "user_name"
+    t.string   "user_id"
     t.string   "address"
     t.integer  "tel"
     t.integer  "age"
     t.string   "email"
     t.boolean  "admin_authority"
+    t.string   "name"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

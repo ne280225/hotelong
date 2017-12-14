@@ -1,48 +1,24 @@
 Rails.application.routes.draw do
 
+  resources :members
+  resources :plans
+  
   root 'top#index'
   
-  get 'plans/index'
-
-  get 'plans/show'
-
-  get 'rooms/index'
-
-  get 'rooms/show'
-
-  get 'reservations/index'
-
-  get 'reservations/show'
-
-  get 'reservations/new'
-
-  get 'reservations/confirm'
-
-  get 'reservations/create'
-
-  get 'reservations/edit'
-
-  get 'reservations/update'
-
-  get 'reservations/destroy'
-
-  get 'members/show'
-
-  get 'members/new'
-
-  get 'members/confirm'
-
-  post 'members/create'
-
-  get 'members/edit'
-
-  get 'members/update'
-
-  get 'members/destroy'
-
-  get 'mypage/index'
-
-  get 'top/index'
+#  get 'plans/index'
+#  get 'plans/show'
+#  get 'rooms/index'
+#  get 'rooms/show'
+#  get 'reservations/index'
+#  get 'reservations/show'
+#  get 'reservations/new'
+#  get 'reservations/confirm'
+#  get 'reservations/create'
+#  get 'reservations/edit'
+#  patch 'reservations/update'
+#  delete 'reservations/destroy'
+#  get 'mypage/index'
+#  get 'top/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

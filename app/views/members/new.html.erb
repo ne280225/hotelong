@@ -1,7 +1,10 @@
 <h1>sinkitourokugamen</h1>
-<%= form_for @member, url: members_new_path do |f| %>
-<p><%= f.label :user_name, "お名前" %><br>
-  <%= f.text_field :user_name %><br>
+
+<%= form_for @member do |f| %>
+
+<p>
+	<%= f.label :name, "お名前" %><br>
+  <%= f.text_field :name %><br>
   <%= f.label :address, "住所" %><br>
   <%= f.text_field :address %><br>
   <%= f.label :tel, "お電話番号" %><br>
