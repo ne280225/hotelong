@@ -2,8 +2,11 @@
 
 <%= form_for @member do |f| %>
 
-<p>
-	<%= f.label :name, "お名前" %><br>
+<p><%= f.label :name, "ユーザID" %><br>
+  <%= f.text_field :name %><br>
+  <%= f.label :name, "パスワード" %><br>
+  <%= f.text_field :name %><br>
+  <%= f.label :name, "お名前" %><br>
   <%= f.text_field :name %><br>
   <%= f.label :address, "住所" %><br>
   <%= f.text_field :address %><br>
