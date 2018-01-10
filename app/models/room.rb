@@ -10,4 +10,7 @@
 #
 
 class Room < ActiveRecord::Base
+	has_many :plans, through: :plan_rooms
+	has_many :plan_rooms
+	belongs_to :reservation
 end

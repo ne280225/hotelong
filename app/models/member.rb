@@ -24,7 +24,6 @@ class Member < ActiveRecord::Base
 #  validate :check_email
 #  validates :password, presence: { on: :create },confirmation: { allow_blank: true }
   validates :user_id, presence: true, uniqueness: true
-  validates :hashed_password, presence: { on: :create },confirmation: { allow_blank: true }
   validates :address, presence: true
   validates :name, presence: true
   validates :sex, presence: true,numericality: { only_integer: true,greater_than: 0, less_than: 3, allow_blank: true },uniqueness: true
@@ -32,6 +31,10 @@ class Member < ActiveRecord::Base
   validates :birthday, presence: true
   validates :email, presence: true,uniqueness: true
   validates :admin_authority, inclusion: { in: [true, false] }
+  validates :password, presence: { on: :create },
+    confirmation: { allow_blank: true }
+
+    attr_accessor :password, :password_confirmation
   
   def password=(val)
     if val.present?
@@ -39,5 +42,7 @@ class Member < ActiveRecord::Base
     end
     @password = val
   end
+
+  belongs_to :room
   
 end 

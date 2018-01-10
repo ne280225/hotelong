@@ -30,6 +30,9 @@ ja:
         gender_1: 男
         gender_2: 女
         user_id: ユーザID
+        administrator: 管理者
+        password: パスワード
+        password_confirmation: パスワードの確認
   
 
   hello: "Hello world"

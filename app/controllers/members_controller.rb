@@ -14,13 +14,12 @@ class MembersController < ApplicationController
   end
 
   def create
-    @member = Member.new(member_params)
- #   if @member.save
-    @member.save
+    @member = Member.new(params[:member])
+    if @member.save
     redirect_to controller: 'top', action: 'index'
-#  else
-#    render 'new'
-# end
+  else
+    render 'new'
+ end
 end
 
   
