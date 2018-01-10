@@ -1,0 +1,6 @@
+<% form_for(@reservation) do |f| %>
+  <% [ :room_id, :plan_id, :member_id, :guest_count, sum_price, start_date, end_date, is_extend ].each do |attr| %>
+    <%= f.hidden_field attr %>
+  <% end %>
+  <%= f.submit '保存' %>
+<% end %>

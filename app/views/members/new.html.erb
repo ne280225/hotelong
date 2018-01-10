@@ -1,24 +1,9 @@
-<h1>sinkitourokugamen</h1>
+<h1>新規登録画面</h1>
 
 <%= form_for @member do |f| %>
 
-<p><%= f.label :name, "ユーザID" %><br>
-  <%= f.text_field :name %><br>
-  <%= f.label :name, "パスワード" %><br>
-  <%= f.text_field :name %><br>
-  <%= f.label :name, "お名前" %><br>
-  <%= f.text_field :name %><br>
-  <%= f.label :address, "住所" %><br>
-  <%= f.text_field :address %><br>
-  <%= f.label :tel, "お電話番号" %><br>
-  <%= f.text_field :tel %><br>
-  <%= f.label :age, "年齢" %><br>
-  <%= f.text_field :age %><br>
-  <%= f.label :email, "eメールアドレス" %><br>
-  <%= f.text_field :email %><br>
-  <%= f.label :admin_authority, "管理者" %><br>
-  <%= f.check_box :admin_authority %><br>
-  <%= f.submit %>
-</p>
-
+<%= form_for @member do |form| %>
+<%= render "form", form: form %>
+<p><%= form.submit %></p>
+<% end %>
 <% end %>

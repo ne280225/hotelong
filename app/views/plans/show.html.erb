@@ -1,2 +1,9 @@
 <h1>Plans#show</h1>
 <p>Find me in app/views/plans/show.html.erb</p>
+
+<h1>プラン名 <%= @plans.name %></h1> 
+<h3>予約可能人数 <%= @plans.apply_count %></h3>
+<h3>金額 <%= @plans.price %></h3>
+
+
+<p><%= link_to "予約フォームへ", new_reservation_path %></p>

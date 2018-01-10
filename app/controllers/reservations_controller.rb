@@ -6,9 +6,16 @@ class ReservationsController < ApplicationController
   end
 
   def new
+    @Reservation = Reservation.new
   end
 
   def confirm
+    @Reservation = Reservation.new(params[:reservation])
+    if @reservation.valid?
+      render :action => 'confirm'
+    else
+      render :action => 'new'
+    end
   end
 
   def create

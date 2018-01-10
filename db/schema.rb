@@ -11,29 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171212040007) do
+ActiveRecord::Schema.define(version: 20180109180054) do
 
   create_table "class_rooms", force: :cascade do |t|
-    t.integer  "person_price"
-    t.string   "style_name"
-    t.integer  "expect_count"
-    t.boolean  "can_add_bed"
-    t.float    "discount_rate"
-    t.float    "surcharge_rate"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.integer  "person_price",                 null: false
+    t.string   "style_name",                   null: false
+    t.integer  "expect_count",                 null: false
+    t.boolean  "can_add_bed",                  null: false
+    t.float    "discount_rate",  default: 1.0, null: false
+    t.float    "surcharge_rate", default: 1.0, null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "members", force: :cascade do |t|
-    t.string   "user_id"
-    t.string   "address"
-    t.integer  "tel"
-    t.integer  "age"
-    t.string   "email"
-    t.boolean  "admin_authority"
-    t.string   "name"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.string   "user_id",                         null: false
+    t.string   "password",                        null: false
+    t.string   "name",                            null: false
+    t.integer  "sex",                             null: false
+    t.string   "address",                         null: false
+    t.integer  "tel",                             null: false
+    t.date     "birthday",                        null: false
+    t.string   "email",                           null: false
+    t.boolean  "admin_authority", default: false, null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.string   "hashed_password"
   end
 
   create_table "plan_rooms", force: :cascade do |t|
@@ -44,9 +47,9 @@ ActiveRecord::Schema.define(version: 20171212040007) do
   end
 
   create_table "plans", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "apply_count"
-    t.integer  "price"
+    t.string   "name",        null: false
+    t.integer  "apply_count", null: false
+    t.integer  "price",       null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -65,8 +68,8 @@ ActiveRecord::Schema.define(version: 20171212040007) do
   end
 
   create_table "rooms", force: :cascade do |t|
-    t.integer  "class_room_id"
-    t.integer  "room_number"
+    t.integer  "class_room_id", null: false
+    t.integer  "room_number",   null: false
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end

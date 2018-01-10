@@ -1,12 +1,16 @@
 class MembersController < ApplicationController
   def show
+    @member = Member.find(params[:id])
   end
 
   def new
     @member = Member.new
   end
 
-  def confirm
+  def destroy
+    @member = Member.find(params[:id])
+    @member.destroy
+    redirect_to root
   end
 
   def create

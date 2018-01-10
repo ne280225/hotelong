@@ -2,6 +2,12 @@ Rails.application.routes.draw do
 
   resources :members
   resources :plans
+
+  resources :reservations do
+    member do
+      get 'confirm'
+    end
+  end
   
   root 'top#index'
   
