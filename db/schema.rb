@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180109180054) do
+ActiveRecord::Schema.define(version: 20171212040007) do
 
   create_table "class_rooms", force: :cascade do |t|
     t.integer  "person_price",                 null: false
@@ -26,22 +26,21 @@ ActiveRecord::Schema.define(version: 20180109180054) do
 
   create_table "members", force: :cascade do |t|
     t.string   "user_id",                         null: false
-    t.string   "password",                        null: false
+    t.string   "hashed_password",                 null: false
     t.string   "name",                            null: false
     t.integer  "sex",                             null: false
     t.string   "address",                         null: false
-    t.integer  "tel",                             null: false
+    t.string   "tel",                             null: false
     t.date     "birthday",                        null: false
     t.string   "email",                           null: false
     t.boolean  "admin_authority", default: false, null: false
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
-    t.string   "hashed_password"
   end
 
   create_table "plan_rooms", force: :cascade do |t|
-    t.integer  "room_id"
-    t.integer  "plan_id"
+    t.integer  "room_id",    null: false
+    t.integer  "plan_id",    null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -55,14 +54,14 @@ ActiveRecord::Schema.define(version: 20180109180054) do
   end
 
   create_table "reservations", force: :cascade do |t|
-    t.integer  "room_id"
-    t.integer  "plan_id"
-    t.integer  "member_id"
-    t.integer  "guest_count"
-    t.integer  "sum_price"
-    t.date     "start_date"
-    t.date     "end_date"
-    t.boolean  "is_extend"
+    t.integer  "room_id",     null: false
+    t.integer  "plan_id",     null: false
+    t.integer  "member_id",   null: false
+    t.integer  "guest_count", null: false
+    t.integer  "sum_price",   null: false
+    t.date     "start_date",  null: false
+    t.date     "end_date",    null: false
+    t.boolean  "is_extend",   null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end

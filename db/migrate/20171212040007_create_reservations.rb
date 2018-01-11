@@ -1,14 +1,14 @@
 class CreateReservations < ActiveRecord::Migration
   def change
     create_table :reservations do |t|
-      t.integer :room_id
-      t.integer :plan_id
-      t.integer :member_id
-      t.integer :guest_count
-      t.integer :sum_price
-      t.date :start_date
-      t.date :end_date
-      t.boolean :is_extend
+      t.references :room, null: false
+      t.references :plan, null: false
+      t.references :member, null: false
+      t.integer :guest_count, null: false
+      t.integer :sum_price, null: false
+      t.date :start_date, null: false
+      t.date :end_date, null: false
+      t.boolean :is_extend, null: false
 
       t.timestamps null: false
     end

@@ -9,8 +9,7 @@ admin_authoritys = [true, false]
 0.upto(9) do |idx|
   Member.create(
     user_id: user_ids[idx],
-    password: "password",
-    password_confirmation: "password"
+    hashed_password: "password",
     name: names[idx],
     sex: (idx % 2) + 1,
     address: addresses[idx],

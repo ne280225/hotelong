@@ -8,6 +8,8 @@ Rails.application.routes.draw do
       get 'confirm'
     end
   end
+
+  resource :session, only: [:create, :destroy]
   
   root 'top#index'
   
