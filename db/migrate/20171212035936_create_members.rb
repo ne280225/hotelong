@@ -1,5 +1,5 @@
 class CreateMembers < ActiveRecord::Migration
-  def create
+  def change
     create_table :members do |t|
       t.string :user_id, null: false
       t.string :hashed_password, null: false
