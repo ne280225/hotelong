@@ -14,7 +14,7 @@ class MembersController < ApplicationController
   end
 
   def create
-    @member = Member.new(params[:member])
+    @member = Member.new(member_params)
     if @member.save
     redirect_to controller: 'top', action: 'index'
   else
@@ -38,8 +38,7 @@ end
   private
 
   def member_params
-    params[:member].permit(:user_name)
-    #params[:member].permit(:user_name, :address, :tel, :age, :email, :admin_authority)
+    params[:member].permit(:user_name, :name, :tel, :address, :sex, :birthday, :email, :admin_authority, :hashed_password)
   end
 
 end

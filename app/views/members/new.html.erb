@@ -1,9 +1,7 @@
 <h1>新規登録画面</h1>
 
-<%= form_for @member do |f| %>
-
 <%= form_for @member do |form| %>
+
 <%= render "form", form: form %>
 <p><%= form.submit %></p>
-<% end %>
 <% end %>

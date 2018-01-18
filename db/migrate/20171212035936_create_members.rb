@@ -1,5 +1,5 @@
 class CreateMembers < ActiveRecord::Migration
-  def change
+  def create
     create_table :members do |t|
       t.string :user_id, null: false
       t.string :hashed_password, null: false
@@ -9,7 +9,7 @@ class CreateMembers < ActiveRecord::Migration
       t.string :tel, null: false
       t.date :birthday, null: false
       t.string :email, null: false
-      t.boolean :admin_authority, null: false, default: false
+      t.boolean :admin_authority, default: false
 
       t.timestamps null: false
     end
