@@ -1,6 +1,6 @@
 class MembersController < ApplicationController
   def show
-    @member = Member.find(params[:id])
+    @members = Member.all
   end
 
   def new
@@ -22,7 +22,7 @@ class MembersController < ApplicationController
  end
 end
 
-  
+
 
 
   def edit
@@ -38,7 +38,7 @@ end
   private
 
   def member_params
-    params[:member].permit(:user_name, :name, :tel, :address, :sex, :birthday, :email, :admin_authority, :hashed_password)
+    params[:member].permit(:user_id, :name, :tel, :address, :sex, :birthday, :email, :admin_authority, :hashed_password)
   end
 
 end
