@@ -1,9 +1,10 @@
-<h1>Plans#index</h1>
-<p>Find me in app/views/plans/index.html.erb</p>
-
-
-<ul>
-	<% @plans.each do |plan| %>
-	<li><%= link_to plan.name, plan_path(plan.id) %></li>
-	<% end %>
-</ul>
+<h1>プランを知る</h1>
+<div id='menu'>
+<%= menu_link_to "お部屋を選ぶ", rooms_path %> &nbsp; <%= menu_link_to "プランを知る", plans_path %>
+</div>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;プラン名  料金（円）</p>
+<p>
+<% @plans.each do |plan| %>
+ &nbsp;&nbsp;&nbsp;&nbsp;<%= plan.name %> &nbsp; <%= plan.price %><br /><br />
+<% end %>
+</p>
