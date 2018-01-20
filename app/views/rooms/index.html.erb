@@ -2,3 +2,11 @@
 <div id='menu'>
 <%= menu_link_to "お部屋を選ぶ", rooms_path %> &nbsp; <%= menu_link_to "プランを知る", plans_path %>
 </div>
+
+<ul>
+	<% @rooms.each do |room| %>
+	<li>
+		<%= link_to room.room_number, room_path(room.id) %>
+	</li>
+	<% end %>
+</ul>
