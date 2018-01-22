@@ -8,16 +8,16 @@
 <% if @class_room_expect_count > 1 && @class_room_can_add_bed == true %>
   <p>宿泊可能人数：　基本人数は <%= @class_room_expect_count%> 名様 (エクストラベッド使用)最大 <%= @class_room_expect_count +1%> 名様まで</p>
   <p>お値段：　<%= @class_room_expect_count%>名様宿泊で、<%= @class_room_expect_count*@class_room_person_price %>円 (1名様あたり<%=@class_room_person_price%>円) </p>
-  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;　<%= @class_room_expect_count +1%>名様宿泊(エクストラベッド使用で)で、<%= @class_room_expect_count*@class_room_discount_rate*@class_room_person_price%>円 (1名様あたり<%=@class_room_person_price*@class_room_discount_rate%>円)</p>
-  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;　<%= @class_room_expect_count -1%>名様宿泊で、<%= (@class_room_expect_count-1)*@class_room_surcharge_rate*@class_room_person_price%>円</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;　<%= @class_room_expect_count +1%>名様宿泊(エクストラベッド使用)で、<%= sprintf("%.0f円",@class_room_expect_count*@class_room_discount_rate*@class_room_person_price)%> (1名様あたり<%= sprintf("%.0f円",@class_room_person_price*@class_room_discount_rate)%>)</p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;　<%= @class_room_expect_count -1%>名様宿泊で、<%=sprintf("%.0f円", (@class_room_expect_count-1)*@class_room_surcharge_rate*@class_room_person_price)%></p>
 <% else if @class_room_expect_count > 1 %>
 <p>宿泊可能人数： 基本・最大人数 <%= @class_room_expect_count%> 名様</p>
-<p>お値段：　<%= @class_room_expect_count%>名様宿泊で、<%= @class_room_expect_count*@class_room_person_price %>円 (1名様あたり<%=@class_room_person_price%>円) </p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;　<%= @class_room_expect_count -1%>名様宿泊で、<%= (@class_room_expect_count-1)*@class_room_surcharge_rate*@class_room_person_price%>円</p>
+<p>お値段：　<%= @class_room_expect_count%>名様宿泊で、<%= @class_room_expect_count*@class_room_person_price %>円 (1名様あたり<%=sprintf("%.0f円",@class_room_person_price)%>) </p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;　<%= @class_room_expect_count -1%>名様宿泊で、<%= sprintf("%.0f円",(@class_room_expect_count-1)*@class_room_surcharge_rate*@class_room_person_price)%></p>
 
 <% else %>
   <p>宿泊可能人数：　１名様 </p>
-  <p>お値段：　<%= @class_room_expect_count*@class_room_person_price %>円</p>
+  <p>お値段：　<%= @class_room_person_price %>円</p>
 
 <% end %>
 <% end %>
