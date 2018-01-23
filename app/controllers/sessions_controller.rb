@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def create
-    member = Member.authenticate(params[:user_id], params[:password])
+    member = Member.authenticate(params[:user_id], params[:hashed_password])
     if member
       session[:user_id] = member.user_id
     else
