@@ -39,6 +39,7 @@ end
   def update
     @member = Member.find(params[:id])
 		if @member.update(member_params)
+      session[:user_id] = @member.user_id
 			redirect_to member_path
 		else
 			render 'edit'
