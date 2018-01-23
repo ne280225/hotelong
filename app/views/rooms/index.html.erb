@@ -2,8 +2,8 @@
 <div id='menu'>
 <%= menu_link_to "お部屋を選ぶ", rooms_path %> &nbsp; <%= menu_link_to "プランを知る", plans_path %>
 </div>
-
-<p><%= current_member.name %></p>
+<p><%= link_to "マイページへ",:action=>"index", :controller=>"mypage" %></p>
+<p>テスト用<%= current_member.id %></p>
 
 <ul>
 	<% @rooms.each do |room| %>
