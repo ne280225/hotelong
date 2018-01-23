@@ -1,3 +1,5 @@
+<p><%= link_to "マイページトップに戻る",:controller => 'mypage', :action => 'index', :member_id => @member.id %></p>
+
 <h1>会員情報</h1>
 
 <p>[ユーザーID] <%= @member.user_id %></p>
@@ -10,4 +12,6 @@
 <p> <%= @member.email %></p>
 <p><%= @member.admin_authority %></p>
 
+
+<p><%= link_to "会員情報を変更する",:controller => 'members', :action => 'edit', :member_id => @member.id %></p>
 <p><%= link_to "退会", member_path, :member_id => @member.id, method: :delete, data: { confirm: "本当に退会しますか？(会員情報は削除されます)" } %></p>

@@ -1,2 +1,8 @@
-<h1>Members#edit</h1>
-<p>Find me in app/views/members/edit.html.erb</p>
+<h1>会員情報変更</h1>
+
+<%= form_for @member do |form| %>
+
+<%= render "form", form: form %>
+<p><%= form.submit %></p>
+
+<% end %>
