@@ -7,6 +7,8 @@ class ReservationsController < ApplicationController
 
   def new
     @Reservation = Reservation.new
+    @room_id = params[:room_id]
+    @room_number = params[:room_number]
   end
 
   def confirm
