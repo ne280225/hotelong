@@ -3,3 +3,7 @@
 <p>[お部屋番号] <%= @room_number %></p>
 <p>[プラン] <%= @plan_name %></p>
 <p>[ご利用人数] <%= @reservation.guest_count %> 名様</p>
+<p>[チェックイン日] <%= @reservation.start_date %> </p>
+<p>[チェックアウト日] <%= @reservation.end_date %> </p>
+
+<p><%= link_to "キャンセル", reservation_path, :reservation_id => @reservation.id, method: :delete, data: { confirm: "本当にキャンセルしますか？" } %></p>
