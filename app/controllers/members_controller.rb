@@ -1,6 +1,11 @@
 class MembersController < ApplicationController
-  def show
+
+  def index
     @members = Member.all
+  end
+
+  def show
+    @member = Member.find(params[:id])
   end
 
   def new
@@ -10,7 +15,7 @@ class MembersController < ApplicationController
   def destroy
     @member = Member.find(params[:id])
     @member.destroy
-    redirect_to root
+    redirect_to :root
   end
 
   def create
@@ -24,7 +29,6 @@ end
 
 
 
-
   def edit
   end
 
@@ -32,8 +36,6 @@ end
   def update
   end
 
-  def destroy
-  end
 
   private
 

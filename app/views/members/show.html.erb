@@ -1,18 +1,13 @@
-<h1>Members#show</h1>
-<p>Find me in app/views/members/show.html.erb</p>
+<h1>会員情報</h1>
 
-<p>開発用メンバー一覧表示</p>
-<p>
-<% @members.each do |member| %>
-[ユーザーID] <%= member.user_id %><br />
- <%= member.hashed_password %><br />
- <%= member.name %><br />
- <%= member.sex %><br />
- <%= member.address %><br />
- <%= member.tel %><br />
- <%= member.birthday %><br />
- <%= member.email %><br />
-<%= member.admin_authority %><br />
+<p>[ユーザーID] <%= @member.user_id %></p>
+<p> <%= @member.hashed_password %></p>
+<p> <%= @member.name %></p>
+<p> <%= @member.sex %></p>
+<p> <%= @member.address %></p>
+<p> <%= @member.tel %></p>
+<p> <%= @member.birthday %></p>
+<p> <%= @member.email %></p>
+<p><%= @member.admin_authority %></p>
 
-<% end %>
-</p>
+<p><%= link_to "退会", member_path, :member_id => @member.id, method: :delete, data: { confirm: "本当に退会しますか？(会員情報は削除されます)" } %></p>

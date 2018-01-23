@@ -1,0 +1,18 @@
+<h1>Members#index</h1>
+<p>Find me in app/views/members/show.html.erb</p>
+
+<p>開発用メンバー一覧表示</p>
+<p>
+<% @members.each do |member| %>
+[ユーザーID] <%= member.user_id %><br />
+ <%= member.hashed_password %><br />
+ <%= member.name %><br />
+ <%= member.sex %><br />
+ <%= member.address %><br />
+ <%= member.tel %><br />
+ <%= member.birthday %><br />
+ <%= member.email %><br />
+<%= member.admin_authority %><br />
+
+<% end %>
+</p>
