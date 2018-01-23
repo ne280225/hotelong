@@ -4,6 +4,10 @@ class ReservationsController < ApplicationController
   end
 
   def show
+    @reservation = Reservation.find(params[:id])
+    @room_number = @reservation.room.room_number
+    @plan_name = @reservation.plan.name
+
   end
 
   def new

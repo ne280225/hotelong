@@ -2,7 +2,7 @@
 <ul>
 	<% @reservations.each do |reservation| %>
 	<% if reservation.member_id == current_member.id %>
-	<li>チェックイン <%= reservation.start_date %> ログアウト <%= reservation.end_date %> roomID <%= reservation.room_id %> </li>
+	<li><%= link_to reservation.id, reservation_path(reservation.id) %> チェックイン <%= reservation.start_date %> ログアウト <%= reservation.end_date %> roomID <%= reservation.room_id %> </li>
 
 	<% end %>
 	<% end %>

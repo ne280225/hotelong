@@ -15,7 +15,7 @@
 #
 
 class Member < ActiveRecord::Base
-  belongs_to :reservation
+  has_many :reservations
 
   class << self
     def authenticate(user_id, hashed_password)
