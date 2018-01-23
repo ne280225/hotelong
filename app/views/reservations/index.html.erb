@@ -1,2 +1,11 @@
-<h1>Reservations#index</h1>
-<p>Find me in app/views/reservations/index.html.erb</p>
+<h1>予約一覧</h1>
+<ul>
+	<% @reservations.each do |reservation| %>
+	<% if reservation.member_id == current_member.id %>
+	<li>チェックイン <%= reservation.start_date %> ログアウト <%= reservation.end_date %> roomID <%= reservation.room_id %> </li>
+
+	<% end %>
+	<% end %>
+
+
+</ul>

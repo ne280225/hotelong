@@ -1,18 +1,19 @@
 class ReservationsController < ApplicationController
   def index
+    @reservations = Reservation.all
   end
 
   def show
   end
 
   def new
-    @Reservation = Reservation.new
+    @reservation = Reservation.new
     @room_id = params[:room_id]
     @room_number = params[:room_number]
   end
 
   def confirm
-    @Reservation = Reservation.new(params[:reservation])
+    @reservation = Reservation.new(params[:reservation])
     if @reservation.valid?
       render :action => 'confirm'
     else
