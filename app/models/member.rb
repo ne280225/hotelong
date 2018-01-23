@@ -17,12 +17,14 @@
 class Member < ActiveRecord::Base
   belongs_to :reservation
 
-  def authenticate(user_id, hashed_password)
-      member = find_by(user_id: user_id)
-      if user_id && member.hashed_password.present? && member.hashed_password == password
-        member
-      else
-        nil
+  class << self
+    def authenticate(user_id, hashed_password)
+        member = find_by(user_id: user_id)
+        if member && member.hashed_password.present? && member.hashed_password == hashed_password
+          member
+        else
+          nil
+        end
       end
     end
 

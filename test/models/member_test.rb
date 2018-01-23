@@ -22,7 +22,7 @@ class MemberTest < ActiveSupport::TestCase
   # end
 
   test "authenticate" do
-    member = FactoryGirl.create(:member, user_id: "taro",
+    member = FactoryGirl.create(user_id: "taro",
       hashed_password: "happy")
     assert_nil Member.authenticate("taro", "lucky")
     assert_equal member, Member.authenticate("taro", "happy")
