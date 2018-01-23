@@ -1,5 +1,4 @@
 <h1>マイページトップ</h1>
 
 <h3><%= link_to "会員情報",:controller => 'members', :action => 'show' ,:id => current_member.id %></h3>
-<p><%=  current_member.id %></p>
 <h3><%= link_to "予約情報", reservations_path %></h3>

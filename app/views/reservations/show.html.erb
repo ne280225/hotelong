@@ -7,3 +7,5 @@
 <p>[チェックアウト日] <%= @reservation.end_date %> </p>
 
 <p><%= link_to "キャンセル", reservation_path, :reservation_id => @reservation.id, method: :delete, data: { confirm: "本当にキャンセルしますか？" } %></p>
+
+<p><%= link_to "予約一覧へ", reservations_path %></p>
