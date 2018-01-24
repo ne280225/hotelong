@@ -2,7 +2,10 @@ class RoomsController < ApplicationController
 
   def index
     @search_form = RoomSearchForm.new(params[:search])
-    @rooms = @search_form.search
+    @searchedrooms = @search_form.search
+    @searchedrooms = Room.all if @searchedrooms == Room
+
+
   end
 
   def show

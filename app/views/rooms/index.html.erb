@@ -8,11 +8,10 @@
 
 <%= form_for @search_form, as: 'search', url: :rooms, html: {method: :get} do |f| %>
 <%= f.text_field :room_id%>
+<%= f.text_field :plan_id%>
 <%= f.submit "検索" %>
 <% end %>
-
-
-<p> すべてのid <%= @rooms.ids %> &nbsp;</p><br /><br />
-<% @rooms.each do |room| %>
-<li> &nbsp;&nbsp;&nbsp;&nbsp;<%= room.id %> &nbsp;</li> <br /><br />
+<br /><br />
+<% @searchedrooms.each do |room| %>
+<li> <%= link_to room.room_number, room_path(room.id) %> &nbsp;</li>
 <% end %>
