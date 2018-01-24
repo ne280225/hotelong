@@ -5,10 +5,14 @@
 <p><%= link_to "マイページへ",:action=>"index", :controller=>"mypage" %></p>
 <p>テスト用<%= current_member.user_id %></p>
 
-<ul>
-	<% @rooms.each do |room| %>
-	<li>
-		<%= link_to room.room_number, room_path(room.id) %>
-	</li>
-	<% end %>
-</ul>
+
+<%= form_for @search_form, as: 'search', url: :rooms, html: {method: :get} do |f| %>
+<%= f.text_field :room_id%>
+<%= f.submit "検索" %>
+<% end %>
+
+
+<p> すべてのid <%= @rooms.ids %> &nbsp;</p><br /><br />
+<% @rooms.each do |room| %>
+<li> &nbsp;&nbsp;&nbsp;&nbsp;<%= room.id %> &nbsp;</li> <br /><br />
+<% end %>

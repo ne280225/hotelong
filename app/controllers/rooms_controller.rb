@@ -1,7 +1,8 @@
 class RoomsController < ApplicationController
 
   def index
-    @rooms = Room.all
+    @search_form = RoomSearchForm.new(params[:search])
+    @rooms = @search_form.search
   end
 
   def show
@@ -13,9 +14,7 @@ class RoomsController < ApplicationController
     @class_room_can_add_bed = @room.class_room.can_add_bed
     @class_room_discount_rate = @room.class_room.discount_rate
     @class_room_surcharge_rate = @room.class_room.surcharge_rate
-
-
-
-
   end
+
+
 end
