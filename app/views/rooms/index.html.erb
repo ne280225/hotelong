@@ -3,8 +3,6 @@
 <%= menu_link_to "お部屋を選ぶ", rooms_path %> &nbsp; <%= menu_link_to "プランを知る", plans_path %>
 </div>
 <p><%= link_to "マイページへ",:action=>"index", :controller=>"mypage" %></p>
-<p>テスト用<%= current_member.user_id %></p>
-
 
 <%= form_for @search_form, as: 'search', url: :rooms, html: {method: :get} do |f| %>
 <%= f.text_field :room_id%>

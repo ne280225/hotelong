@@ -2,3 +2,5 @@
 
 <h3><%= link_to "会員情報",:controller => 'members', :action => 'show' ,:id => current_member.id %></h3>
 <h3><%= link_to "予約情報", reservations_path %></h3>
+
+<p><%= link_to 'ログアウト', session_path, method: :delete, data: { confirm: 'ログアウトしますか？' } %></p>
