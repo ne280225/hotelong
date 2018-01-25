@@ -1,6 +1,9 @@
+
+
 <h1>予約入力画面</h1>
 
-<p><%= @room_id %></p>
-<p>お部屋番号 <%= @room_number %></p>
 
-<p><%= link_to "確認画面へ", new_reservation_path %></p>
+<h3>お部屋番号 <%= @room_number %>　(部屋id)<%= @room_id %></h3>
+<p>☆<%= current_member.id %></p>
+
+<%= render 'form'%>

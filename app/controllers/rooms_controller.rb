@@ -17,6 +17,8 @@ class RoomsController < ApplicationController
     @class_room_can_add_bed = @room.class_room.can_add_bed
     @class_room_discount_rate = @room.class_room.discount_rate
     @class_room_surcharge_rate = @room.class_room.surcharge_rate
+
+    @plan_room_id = @room.plan_rooms.ids
   end
 
 

@@ -1,0 +1,42 @@
+<%= form_for (@reservation) do |form| %>
+<table class="a">
+
+  <tr>
+    <th><%= form.label :room_id , "部屋id"%></th>
+    <td><%= form.text_field :room_id %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :member_id, "☆を入力してください"%></th>
+    <td><%= form.text_field :member_id %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :guest_count , "ご利用人数"%></th>
+    <td><%= form.text_field :guest_count %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :start_date, "チェックイン日　例2018-01-10"%></th>
+    <td><%= form.text_field :start_date %></td>
+  </tr>
+  <tr>
+    <tr>
+      <th><%= form.label :end_date, "チェックアウト日　例2018-01-10"%></th>
+      <td><%= form.text_field :end_date %></td>
+    </tr>
+  </tr>
+  <tr>
+    <th><%= form.label :plan_id, "プラン" %></th>
+    <td><%= form.text_field :plan_id %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :sum_price, "合計金額" %></th>
+    <td><%= form.text_field :sum_price %></td>
+  </tr>
+  <tr>
+    <th><%= form.label :is_extend, "連泊" %></th>
+    <td><%= form.text_field :is_extend %></td>
+  </tr>
+
+</table>
+<p><%= form.submit %></p>
+
+<% end %>
