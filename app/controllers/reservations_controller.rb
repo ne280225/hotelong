@@ -47,13 +47,9 @@ class ReservationsController < ApplicationController
     @reservation.destroy
     redirect_to :reservations
   end
-  private
 
-  def member_params
-    params[:member].permit(:user_id, :name, :tel, :address, :sex, :birthday, :email, :admin_authority, :hashed_password)
-  end
 
-end
+  
 private
 
 def reservation_params
