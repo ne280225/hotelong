@@ -49,9 +49,10 @@ class ReservationsController < ApplicationController
   end
 
 
-  
+
 private
 
 def reservation_params
   params[:reservation].permit(:room_id, :plan_id, :member_id, :guest_count, :start_date, :end_date, :sum_price, :is_extend)
+end
 end
