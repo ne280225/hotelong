@@ -1,13 +1,23 @@
 <%= form_for (@reservation) do |form| %>
+<%= @room_number %>
 <table class="a">
 
-  <tr>
-    <th><%= form.label :room_id , "部屋id"%></th>
-    <td><%= form.text_field :room_id %></td>
+  <% @plans.length.times do |i| %>
+  <p>プランNo<%= @plans[i].id %>→<%= @plans[i].name %></p>
+  <% end %>
+<tr>
+  <th><%= form.label :plan_id, "ご利用プランの番号を入力してください" %></th>
+  <td><%= form.text_field :plan_id %></td>
+</tr>
+<tr>
+    <th>メンバーID</th>
+    <td><%= current_member.id %></td>
   </tr>
+   <%= form.hidden_field :member_id, :value => current_member.id %>
   <tr>
-    <th><%= form.label :member_id, "☆を入力してください"%></th>
-    <td><%= form.text_field :member_id %></td>
+    <th>部屋ID</th>
+    <td><%= @room_id %></td>
+     <%= form.hidden_field :room_id, :value => @room_id %>
   </tr>
   <tr>
     <th><%= form.label :guest_count , "ご利用人数"%></th>
@@ -23,10 +33,7 @@
       <td><%= form.text_field :end_date %></td>
     </tr>
   </tr>
-  <tr>
-    <th><%= form.label :plan_id, "プラン" %></th>
-    <td><%= form.text_field :plan_id %></td>
-  </tr>
+
   <tr>
     <th><%= form.label :sum_price, "合計金額" %></th>
     <td><%= form.text_field :sum_price %></td>

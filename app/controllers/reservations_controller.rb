@@ -14,7 +14,9 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new
     @room_id = params[:room_id]
     @room_number = params[:room_number]
-    @plan_id = @reservation.plan_id
+    @room = Room.find(@room_id)
+    @plans = @room.plans
+
 
   end
 
